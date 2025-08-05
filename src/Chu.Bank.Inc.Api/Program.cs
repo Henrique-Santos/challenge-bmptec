@@ -4,6 +4,8 @@ var builder = WebApplication.CreateBuilder(args);
 {
     builder.Services.AddControllers();
 
+    builder.Services.AddApiConfigurations();
+
     builder.Services.AddSwaggerConfigurations();
 
     builder.Services.AddIdentityConfigurations(builder.Configuration);
@@ -17,8 +19,7 @@ var app = builder.Build();
 {
     if (app.Environment.IsDevelopment())
     {
-        app.UseSwagger();
-        app.UseSwaggerUI();
+        app.UseSwaggerConfigurations();
     }
 
     app.UseHttpsRedirection();
