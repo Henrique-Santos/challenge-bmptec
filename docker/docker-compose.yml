@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  chu-bank-api:
+    container_name: chu-bank-api
+    build:
+      context: ../src/Chu.Bank.Inc.Api
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=chu-bank-db;Port=5432;Database=ChuBankInc;User Id=postgres;Password=postgres;
+    depends_on:
+      - chu-bank-db
+    networks:
+      - chu-bank-network
+
+  chu-bank-db:
+    container_name: chu-bank-db
+    image: postgres:17
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: ChuBankInc
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - chu-bank-network
+
+volumes:
+  postgres_data:
+
+networks:
+  chu-bank-network:
+    driver: bridge

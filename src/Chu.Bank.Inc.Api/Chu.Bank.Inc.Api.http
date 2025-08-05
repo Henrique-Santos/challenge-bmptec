@@ -1,0 +1,11 @@
+@HostAddress = http://localhost:5097
+
+POST {{HostAddress}}/auth/sign-in/
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "Test@1234"
+}
+
+###
