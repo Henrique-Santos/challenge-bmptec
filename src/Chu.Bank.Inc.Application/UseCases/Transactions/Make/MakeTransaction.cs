@@ -25,14 +25,14 @@ public class MakeTransaction : IMakeTransaction
             throw new InvalidOperationException("Cannot transfer to the same account.");
         }
 
-        var fromAccount = await _accoutRepository.GetByUserIdAsync(request.FromAccountId, cancellationToken);
+        var fromAccount = await _accoutRepository.GetByIdAsync(request.FromAccountId, cancellationToken);
 
         if (fromAccount is null)
         {
             throw new InvalidOperationException("From account does not exist.");
         }
 
-        var toAccount = await _accoutRepository.GetByUserIdAsync(request.ToAccountId, cancellationToken);
+        var toAccount = await _accoutRepository.GetByIdAsync(request.ToAccountId, cancellationToken);
 
         if (toAccount is null)
         {

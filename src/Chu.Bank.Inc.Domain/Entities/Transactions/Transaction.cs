@@ -4,9 +4,9 @@ public class Transaction
 {
     public Guid Id { get; private set; }
     public Guid AccountId { get; private set; }
-    public Guid ToAccountId { get; set; }
-    public decimal Amount { get; set; }
-    public DateTime Date { get; set; }
+    public Guid ToAccountId { get; private set; }
+    public decimal Amount { get; private set; }
+    public DateTime Date { get; private set; }
 
     public Transaction(Guid accountId, Guid toAccountId, decimal amount)
     {

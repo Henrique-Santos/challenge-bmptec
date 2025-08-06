@@ -28,6 +28,10 @@ public class Account
 
     public void Withdraw(decimal amount)
     {
+        if (!HasSufficientBalance(amount))
+        {
+            throw new InvalidOperationException("Insufficient balance for withdrawal.");
+        }
         Balance -= amount;
     }
 }

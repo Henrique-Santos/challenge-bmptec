@@ -22,6 +22,15 @@ public class AccountRepository : IAccountRepository
         return account;
     }
 
+    public async Task<Account?> GetByIdAsync(Guid accountId, CancellationToken cancellationToken)
+    {
+        var account = await _context.Accounts
+            .Include(a => a.Transactions)
+            .FirstOrDefaultAsync(a => a.Id == accountId, cancellationToken);
+
+        return account;
+    }
+
     public async Task CreateAsync(Account account, CancellationToken cancellationToken)
     {
         await _context.Accounts.AddAsync(account);
