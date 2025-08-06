@@ -20,6 +20,11 @@ public class MakeTransaction : IMakeTransaction
 
     public async Task<TransactionOutput> Handle(MakeTransactionInput request, CancellationToken cancellationToken)
     {
+        if (request.FromAccountId == request.ToAccountId)
+        {
+            throw new InvalidOperationException("Cannot transfer to the same account.");
+        }
+
         var fromAccount = await _accoutRepository.GetByUserIdAsync(request.FromAccountId, cancellationToken);
 
         if (fromAccount is null)

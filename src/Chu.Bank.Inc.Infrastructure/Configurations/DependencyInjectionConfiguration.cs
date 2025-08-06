@@ -23,6 +23,9 @@ public static class DependencyInjectionConfiguration
         // Domain Services
         services.AddHttpClient<IHolidayService, BrasilApiHolidayService>();
 
+        // Caching
+        services.AddMemoryCache();
+
         return services;
     }
 }
