@@ -1,5 +1,6 @@
 using System.Reflection;
 using Chu.Bank.Inc.Application.Behaviors;
+using Chu.Bank.Inc.Domain.Services.Transactions;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -18,6 +19,9 @@ public static class DependencyInjectionConfiguration
 
         // Validators
         services.AddValidatorsFromAssembly(AssemblyReference.Assembly);
+
+        // Domain Services
+        services.AddScoped<ITransactionPolicy, TransactionPolicy>();
         
         return services;
     }

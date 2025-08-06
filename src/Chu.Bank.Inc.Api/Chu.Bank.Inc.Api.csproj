@@ -31,6 +31,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Chu.Bank.Inc.Domain\Chu.Bank.Inc.Domain.csproj" />
     <ProjectReference Include="..\Chu.Bank.Inc.Application\Chu.Bank.Inc.Application.csproj" />
+    <ProjectReference Include="..\Chu.Bank.Inc.Infrastructure\Chu.Bank.Inc.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

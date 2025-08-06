@@ -4,12 +4,16 @@ using MediatR;
 
 namespace Chu.Bank.Inc.Application.UseCases.Transactions.Make;
 
-public record MakeTransactionInput(Guid ToAccountId, decimal Amount) : IRequest<TransactionOutput>;
+public record MakeTransactionInput(Guid FromAccountId, Guid ToAccountId, decimal Amount) : IRequest<TransactionOutput>;
 
 public class MakeTransactionInputValidator : AbstractValidator<MakeTransactionInput>
 {
     public MakeTransactionInputValidator()
     {
+        RuleFor(x => x.FromAccountId)
+            .NotEmpty().WithMessage("FromAccountId cannot be empty.")
+            .NotNull().WithMessage("FromAccountId cannot be null.");
+
         RuleFor(x => x.ToAccountId)
             .NotEmpty().WithMessage("ToAccountId cannot be empty.")
             .NotNull().WithMessage("ToAccountId cannot be null.");

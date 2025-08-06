@@ -2,10 +2,12 @@ using Asp.Versioning;
 using Chu.Bank.Inc.Api.Controllers;
 using Chu.Bank.Inc.Application.UseCases.Accounts.Create;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Chu.Bank.Inc.Api.V1.Controllers;
 
+[Authorize]
 [ApiVersion(1.0)]
 [Route("v{version:apiVersion}/bank-accounts")]
 public class BankAccountController : ApiController
