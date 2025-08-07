@@ -1,3 +1,5 @@
+using Chu.Bank.Inc.Api.Middlewares;
+
 namespace Chu.Bank.Inc.Api.Configurations;
 
 public static class ApiConfiguration
@@ -18,5 +20,12 @@ public static class ApiConfiguration
             });
 
         return services;
+    }
+
+    public static WebApplication UseCustomMiddlewares(this WebApplication app)
+    {
+        app.UseMiddleware<ExceptionHandlingMiddleware>();
+
+        return app;
     }
 }

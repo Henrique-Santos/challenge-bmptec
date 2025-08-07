@@ -64,3 +64,51 @@ Para rodar via Debug utilize sua IDE favorita e execute os projetos
   Chu.Bank.Inc.Api.UnitTests
   Chu.Bank.Inc.Api.IntegrationTests
 ```
+
+## Seed de Dados
+
+Caso queira agilidade nos testes, o banco é criado já com alguns registros pré inseridos.
+
+- Usuários
+
+```bash
+  {
+    "username": "john_doe",
+    "password": "wq^2I#2wgN0GdIZ"
+  }
+
+  {
+    "username": "mary_doe",
+    "password": "u8aatbj45igfgP!"
+  }
+```
+
+- Contas
+
+```bash
+  {
+    "userId": "cc74a267-ed34-473d-a775-0a9d5e70f969",
+    "balance": 10000
+  }
+
+  {
+    "userId": "95ff55e0-f6da-4fb1-b4b8-6b42b145da77",
+    "balance": 15000
+  }
+```
+
+- Transferencias
+
+```bash
+  {
+    "fromAccountId": "cc74a267-ed34-473d-a775-0a9d5e70f969",
+    "toAccountId": "95ff55e0-f6da-4fb1-b4b8-6b42b145da77",
+    "amount": 1000
+  }
+
+    {
+    "fromAccountId": "95ff55e0-f6da-4fb1-b4b8-6b42b145da77",
+    "toAccountId": "cc74a267-ed34-473d-a775-0a9d5e70f969",
+    "amount": 5000
+  }
+```

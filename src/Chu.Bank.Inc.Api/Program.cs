@@ -18,8 +18,7 @@ var app = builder.Build();
         app.UseSwaggerConfigurations();
     }
 
-    app.UseMiddleware<ExceptionHandlingMiddleware>();
-
+    app.UseAppConfigurations();
     app.UseHttpsRedirection();
     app.UseAuthentication();
     app.UseAuthorization();

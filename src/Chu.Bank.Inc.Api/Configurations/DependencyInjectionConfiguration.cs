@@ -1,5 +1,7 @@
 using Chu.Bank.Inc.Api.Configurations.Swagger;
+using Chu.Bank.Inc.Api.Data;
 using Chu.Bank.Inc.Api.Services;
+using Chu.Bank.Inc.Infrastructure.Data;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
@@ -31,7 +33,18 @@ public static class DependencyInjectionConfiguration
 
         // Swagger
         services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
-        
+
         return services;
+    }
+
+    public static WebApplication UseAppConfigurations(this WebApplication app)
+    {
+        IdentityDbHelper.EnsureDatabaseCreatedAsync(app.Services).Wait();
+
+        ApplicationDbHelper.EnsureDatabaseCreatedAsync(app.Services).Wait();
+
+        app.UseCustomMiddlewares();
+
+        return app;
     }
 }
