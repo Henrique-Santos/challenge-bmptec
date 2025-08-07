@@ -106,7 +106,7 @@ Caso queira agilidade nos testes, o banco é criado já com alguns registros pr�
     "amount": 1000
   }
 
-    {
+  {
     "fromAccountId": "95ff55e0-f6da-4fb1-b4b8-6b42b145da77",
     "toAccountId": "cc74a267-ed34-473d-a775-0a9d5e70f969",
     "amount": 5000

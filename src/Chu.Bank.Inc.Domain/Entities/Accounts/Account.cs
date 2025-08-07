@@ -16,6 +16,14 @@ public class Account
         Balance = balance;
     }
 
+    // For seeder
+    public Account(Guid id, Guid userId, decimal balance)
+    {
+        Id = id;
+        UserId = userId;
+        Balance = balance;
+    }
+
     public bool HasSufficientBalance(decimal amount)
     {
         return Balance >= amount;
