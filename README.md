@@ -61,8 +61,8 @@ Rodando os teste via CLI
 Para rodar via Debug utilize sua IDE favorita e execute os projetos
 
 ```bash
-  Chu.Bank.Inc.Api.UnitTests
-  Chu.Bank.Inc.Api.IntegrationTests
+  Chu.Bank.Inc.UnitTests
+  Chu.Bank.Inc.IntegrationTests
 ```
 
 ## Seed de Dados
