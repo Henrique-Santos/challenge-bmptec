@@ -1,5 +1,4 @@
 using FluentValidation;
-using FluentValidation.Results;
 using MediatR;
 
 namespace Chu.Bank.Inc.Application.Behaviors;

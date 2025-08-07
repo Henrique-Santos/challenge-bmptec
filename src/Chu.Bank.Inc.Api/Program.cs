@@ -1,5 +1,4 @@
 using Chu.Bank.Inc.Api.Configurations;
-using Chu.Bank.Inc.Api.Middlewares;
 using Chu.Bank.Inc.Application.Configurations;
 using Chu.Bank.Inc.Infrastructure.Configurations;
 

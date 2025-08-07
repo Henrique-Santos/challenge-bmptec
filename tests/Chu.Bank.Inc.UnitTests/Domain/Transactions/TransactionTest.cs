@@ -1,5 +1,3 @@
-
-
 using Chu.Bank.Inc.Domain.Entities.Transactions;
 using FluentAssertions;
 

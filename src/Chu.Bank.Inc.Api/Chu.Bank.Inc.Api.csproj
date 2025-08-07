@@ -6,27 +6,45 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Asp.Versioning.Mvc" Version="8.1.0" />
-    <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="8.1.0" />
-    <PackageReference Include="FluentValidation" Version="12.0.0" />
-    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.0.0" />
-    <PackageReference Include="MediatR" Version="13.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.17" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.0.0" />
-  </ItemGroup>
+    <ItemGroup Label="[Versioning]">
+      <PackageReference Include="Asp.Versioning.Mvc" Version="8.1.0" />
+      <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="8.1.0" />
+    </ItemGroup>
+
+    <ItemGroup Label="[Validation]">
+      <PackageReference Include="FluentValidation" Version="12.0.0" />
+      <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.0.0" />
+    </ItemGroup>
+
+    <ItemGroup Label="[MediatR]">
+      <PackageReference Include="MediatR" Version="13.0.0" />
+    </ItemGroup>
+
+    <ItemGroup Label="[Jwt and Identity]">
+      <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0" />
+      <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.0.0" />
+    </ItemGroup>
+
+    <ItemGroup Label="[OpenApi]">
+      <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.17" />
+      <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+    </ItemGroup>
+
+    <ItemGroup Label="[Database]">
+      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0" />
+    </ItemGroup>
+
+    <ItemGroup Label="[Ef-core]">
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0">
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        <PrivateAssets>all</PrivateAssets>
+      </PackageReference>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0">
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        <PrivateAssets>all</PrivateAssets>
+      </PackageReference>
+    </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Chu.Bank.Inc.Domain\Chu.Bank.Inc.Domain.csproj" />
