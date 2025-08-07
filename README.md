@@ -87,11 +87,13 @@ Caso queira agilidade nos testes, o banco é criado já com alguns registros pr�
 
 ```bash
   {
+    "id": "728e087f-31d0-44ef-9092-4d0e65c581ee",
     "userId": "cc74a267-ed34-473d-a775-0a9d5e70f969",
     "balance": 10000
   }
 
   {
+    "id": "8b77a349-7518-4607-85c5-2fe7bbb0382a",
     "userId": "95ff55e0-f6da-4fb1-b4b8-6b42b145da77",
     "balance": 15000
   }
