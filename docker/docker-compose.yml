@@ -4,8 +4,8 @@ services:
   chu-bank-api:
     container_name: chu-bank-api
     build:
-      context: ../src/Chu.Bank.Inc.Api
-      dockerfile: Dockerfile
+      context: ../
+      dockerfile: src/Chu.Bank.Inc.Api/Dockerfile
     ports:
       - "8080:8080"
     environment:

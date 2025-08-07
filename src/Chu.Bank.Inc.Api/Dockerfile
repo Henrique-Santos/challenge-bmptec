@@ -3,16 +3,19 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
 # Copia os projetos e restaura as dependências
-COPY ["Chu.Bank.Inc.Api.csproj", "."]
-RUN dotnet restore "Chu.Bank.Inc.Api.csproj"
+COPY ["src/Chu.Bank.Inc.Api/Chu.Bank.Inc.Api.csproj", "src/Chu.Bank.Inc.Api/"]
+COPY ["src/Chu.Bank.Inc.Application/Chu.Bank.Inc.Application.csproj", "src/Chu.Bank.Inc.Application/"]
+COPY ["src/Chu.Bank.Inc.Domain/Chu.Bank.Inc.Domain.csproj", "src/Chu.Bank.Inc.Domain/"]
+COPY ["src/Chu.Bank.Inc.Infrastructure/Chu.Bank.Inc.Infrastructure.csproj", "src/Chu.Bank.Inc.Infrastructure/"]
+RUN dotnet restore "src/Chu.Bank.Inc.Api/Chu.Bank.Inc.Api.csproj"
 
 # Copia todo o código e faz o build
 COPY . .
-RUN dotnet build "Chu.Bank.Inc.Api.csproj" -c Release -o /app/build
+RUN dotnet build "src/Chu.Bank.Inc.Api/Chu.Bank.Inc.Api.csproj" -c Release -o /app/build
 
 # Publica a aplicação
 FROM build AS publish
-RUN dotnet publish "Chu.Bank.Inc.Api.csproj" -c Release -o /app/publish
+RUN dotnet publish "src/Chu.Bank.Inc.Api/Chu.Bank.Inc.Api.csproj" -c Release -o /app/publish
 
 # Estágio de runtime
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
